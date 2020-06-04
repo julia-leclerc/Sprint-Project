@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<link rel="stylesheet" type="text/css" href="style2.css">
+    <meta charset="UTF-8">
+    <title>Sprint Project</title>
+</head>
+<body>
+	<div class="parent">
+		<div class="welcome">
+			<h2 class="texte">Infos<span class="corona">Corona</span>.com</h2>
+
+			<div class="container">
+				<div class="info">Number of deaths
+					<div id="resultat" class="test"></div>
+				</div>
+				<div class="info">Number of confirmed cases
+					<div id="confirmed" class="test2"></div>
+				</div>
+			</div>
+
+			
+		</div>
+		<div class="button">
+			<input type="text" placeholder="Enter the name of a country" id="suivant">
+		</div>
+			<div id="valider">
+				<button onclick="chiffres()" class="check">Check</button>
+				<button onclick="reset()" class="reset">Reset</button>
+			</div>
+		
+	</div>
+
+	<script type="text/javascript">
+
+	        let apiKey = "1522728fabmshc0a3b824d198dc4p1824f4jsn5ff5925be774";
+			let params = "&units=metric";
+
+	        function chiffres() {
+
+	        	let responseSpan = document.getElementById('suivant').value;
+	        	console.log (responseSpan)
+
+	        	fetch("https://covid-19-data.p.rapidapi.com/report/country/name?date-format=YYYY-MM-DD&format=json&date=2020-04-01&name="+ responseSpan, {
+			"method": "GET",
+			"headers": {
+				"x-rapidapi-host": "covid-19-data.p.rapidapi.com",
+				"x-rapidapi-key": "1522728fabmshc0a3b824d198dc4p1824f4jsn5ff5925be774"
+			}
+		})
+		.then(response => {
+			return response.json();
+		})
+
+		.then(response => {
+			document.getElementById('resultat').innerHTML=response[0].provinces[0].deaths;
+			document.getElementById('confirmed').innerHTML=response[0].provinces[0].confirmed;
+		})
+
+		.catch(err => {
+			document.location.reload(true);
+			alert('An error occured, please try again');
+			
+		});
+	        }
+
+			function reset(){
+				document.location.reload(true);
+			}
+
+	</script>
+</body>

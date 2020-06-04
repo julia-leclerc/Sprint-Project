@@ -1,0 +1,107 @@
+body{
+	font-family: Bahnschrift Light;
+	font-weight: 100;
+	background-image: url(atlas.png);
+	background-repeat: no-repeat;
+	background-position: center top 5px; 
+	}
+
+
+
+
+.parent{
+	display: grid;
+	grid-template-rows: 40% 1fr 1fr ;
+}
+
+.welcome{
+	grid-column: 2;
+	grid-row: 2;
+	width: 500px;
+	height: 200px;
+    background-color: #f3F3F3;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+}
+
+.container{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.info{
+	padding-left: 40px;
+	padding-right: 40px;
+}
+
+.test {
+	padding-left: 40px;
+}
+
+.test2{
+	padding-left: 80px;
+}
+
+.corona {
+	font-weight: bold;
+}
+
+.texte{
+ font-weight: lighter;
+ text-align: center;
+ padding-top: 40px;
+}
+
+.break{
+	text-align: center;
+}
+
+.button{
+	grid-row: 3;
+	grid-column: 2;
+	padding-top: 10px;
+	padding-right: 10px;
+	margin-left: 180px;
+	border: 1px black;
+	border-radius: 30px;
+}
+
+#suivant{
+	border-radius: 30px;
+	height: 30px;
+	width: 165px;;
+	background-color: white;
+}
+
+#valider{
+	grid-column: 2;
+	grid-row: 4;
+	margin-left: 180px;
+	margin-top: 10px;
+}
+
+.check {
+	background-color:  #767676;
+	border-radius: 30px;
+	width: 85px;
+	height: 30px;
+}
+
+.check:hover{
+	background-color: #f3f3f3;
+	transition: all 0.5s ease-out;
+}
+
+.reset{
+	background-color:  #767676;
+	border-radius: 30px;
+	height: 30px;
+	width: 85px;
+}
+
+.reset:hover{
+	background-color: #f3F3F3;
+	transition: all 0.5s ease-out;
+}
